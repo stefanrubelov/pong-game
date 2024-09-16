@@ -13,7 +13,7 @@ public class PongWorld extends World
             setPaintOrder(Balll.class,Smoke.class);
             addObject (new Balll(), getWidth()/2, getHeight()/2);
             addObject(new PlayerPaddle(100,20),getWidth()/2, 550);
-            addObject(new ComputerPaddle(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight())/2);
+            addObject(new ComputerPaddle(), 0, 0);
         } else {
             Greenfoot.setWorld(new StartWorld());
         }
