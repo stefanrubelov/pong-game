@@ -8,15 +8,11 @@ public class StartWorld extends World {
         GreenfootImage background = getBackground(); 
         background.setColor(Color.BLACK);
         background.fill();// Create a blank black background
-        
-        Greenfoot.setWorld(new PongWorld(true)); //commented the second part to skip the animation for now
     }
     public void act() {
+         timer++;
         
-        /*
-        timer++;
-        
-        if(timer ==240){
+        if(timer ==300){
             Greenfoot.setWorld(new PongWorld(true));
         }
         // Add a new star at the center periodically
@@ -29,6 +25,5 @@ public class StartWorld extends World {
             Greenfoot.setWorld(new PongWorld(true));
         }
         
-        */
     }
 }

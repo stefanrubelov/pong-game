@@ -8,7 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Paddle extends Actor
 {
-    
+    // Method to check if the paddle is intersecting a Balll object
+    public boolean checkIntersectionBalll() {
+        Balll ball = (Balll) getOneIntersectingObject(Balll.class);
+        return ball != null; // Returns true if the ball is intersecting, false otherwise
+    }
     public void checkIfAtHorizontalEdge() {
         // Get the actor's position
         int x = getX();

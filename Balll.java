@@ -6,13 +6,17 @@ public class Balll extends SmoothMover
     private static final int BOUNCE_DEVIANCE_MAX = 5;
     private static final int STARTING_ANGLE_WIDTH = 90;
     private static final int DELAY_TIME = 100;
-
     private int speed;
+    private int hitCounter = 0;
+    private static final int HITS_FOR_SPEED_INCREASE = 10;
+    private static final int SPEED_INCREMENT = 1;
+
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;
     private int smokeDelayCounter = 0;
-    private int smokeDelayTime = 10;
+    //private int smokeDelayTime = 4;
+    //private boolean touchingPaddle = false;
 
     /**
      * Contructs the ball and sets it in motion!
@@ -21,9 +25,23 @@ public class Balll extends SmoothMover
     {
         createImage();
         init();
-        addSmokeDelay();
     }
-    private void addSmokeDelay(){
+
+    /*public void checkComputerPaddle(){
+        Actor computerPaddle = getOneIntersectingObject(ComputerPaddle.class);
+    
+    if (computerPaddle != null) {
+        // Ensure the computer paddle is in the world before accessing it
+        if (computerPaddle.getWorld() != null) {
+            if (getY() < computerPaddle.getY()) {
+                // Ball is hitting from below - bounce back
+                revertVertically();  // Invert the vertical movement
+            }
+        }
+        }
+    }*/
+
+   /* private void addSmokeDelay(){
         smokeDelayCounter++;
         if (smokeDelayCounter >= smokeDelayTime) {
             // Spawn smoke at the current location of the ball
@@ -34,7 +52,7 @@ public class Balll extends SmoothMover
             smokeDelayCounter = 0;
         }
     }
-    
+
     /**
      * Creates and sets an image of a black ball to this actor.
      */
@@ -58,21 +76,30 @@ public class Balll extends SmoothMover
         }
         else
         {
-            move(speed);
+            move();
             makeSmoke();
+            checkPaddleHit();
+            //checkComputerPaddle();
             checkBounceOffWalls();
             checkBounceOffCeiling();
             checkRestart();
         }
-        
-        if(isTouching(PlayerPaddle.class)){
-        
-            revertVertically();
-        }
     }    
+    private void move(){
+        move(speed);
+    }
+
     private void makeSmoke()
     {
-        getWorld().addObject (new Smoke(),getX(), getY());
+        smokeDelayCounter++;
+        if (smokeDelayCounter >= Greenfoot.getRandomNumber(8)) {
+            // Spawn smoke at the current location of the ball
+            Smoke smoke = new Smoke();
+            getWorld().addObject(smoke, getX(), getY());
+
+            // Reset the counter to keep the delay consistent
+            smokeDelayCounter = 0;
+        }
     }
 
     /**
@@ -136,7 +163,9 @@ public class Balll extends SmoothMover
             hasBouncedVertically = false;
         }
     }
-
+         public void gameOver(){
+    Greenfoot.setWorld(new GameOverWorld());
+    }
     /**
      * Check to see if the ball should be restarted.
      * If touching the floor the ball is restarted in initial position and speed.
@@ -145,8 +174,7 @@ public class Balll extends SmoothMover
     {
         if (isTouchingFloor())
         {
-            init();
-            setLocation(getWorld().getWidth() / 2, getWorld().getHeight() / 2);
+            gameOver();
         }
     }
 
@@ -163,7 +191,7 @@ public class Balll extends SmoothMover
     /**
      * Bounces the bal back from a horizontal surface.
      */
-    private void revertVertically()
+    public void revertVertically()
     {
         int randomness = Greenfoot.getRandomNumber(BOUNCE_DEVIANCE_MAX)- BOUNCE_DEVIANCE_MAX / 2;
         setRotation((360 - getRotation()+ randomness + 360) % 360);
@@ -181,5 +209,19 @@ public class Balll extends SmoothMover
         hasBouncedVertically = false;
         setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
     }
+    public void checkPaddleHit() {
+        // Assuming Paddle is the parent class of both paddles
+        Paddle paddle = (Paddle) getOneIntersectingObject(Paddle.class);
+        
+        if (paddle != null) {
+            revertVertically(); // Bounce the ball
+            hitCounter++; // Increment the hit counter
 
+            // Increase the speed every 10 hits
+            if (hitCounter >= HITS_FOR_SPEED_INCREASE) {
+                speed += SPEED_INCREMENT; // Increase the speed
+                hitCounter = 0; // Reset the counter after speed increase
+            }
+        }
+    }
 }

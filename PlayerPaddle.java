@@ -32,6 +32,14 @@ public class PlayerPaddle extends Paddle
     {
         changeDirection();
         //setLocation(getX() + dx, getY());
+        // Check if the ball is intersecting the self-moving paddle
+        if (checkIntersectionBalll()) {
+            Balll ball = (Balll) getOneIntersectingObject(Balll.class);
+            if (ball != null && ball.getY() < getY()) {
+                // If the ball is above the paddle, make it bounce up
+                ball.revertVertically();  // Invert vertical direction
+            }
+        }
     }    
 
    
