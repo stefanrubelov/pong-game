@@ -64,6 +64,11 @@ public class Balll extends SmoothMover
             checkBounceOffCeiling();
             checkRestart();
         }
+        
+        if(isTouching(PlayerPaddle.class)){
+        
+            revertVertically();
+        }
     }    
     private void makeSmoke()
     {
