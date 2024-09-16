@@ -8,8 +8,12 @@ public class StartWorld extends World {
         GreenfootImage background = getBackground(); 
         background.setColor(Color.BLACK);
         background.fill();// Create a blank black background
+        
+        Greenfoot.setWorld(new PongWorld(true)); //commented the second part to skip the animation for now
     }
     public void act() {
+        
+        /*
         timer++;
         
         if(timer ==240){
@@ -24,5 +28,7 @@ public class StartWorld extends World {
         {
             Greenfoot.setWorld(new PongWorld(true));
         }
+        
+        */
     }
 }
