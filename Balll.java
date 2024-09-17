@@ -156,6 +156,7 @@ public class Balll extends SmoothMover
             if (! hasBouncedVertically)
             {
                 revertVertically();
+                Greenfoot.playSound("Pew.mp3");
             }
         }
         else
@@ -273,6 +274,11 @@ public class Balll extends SmoothMover
                     setLocation(getX(), getY() + 5);
                 }
             }
+            
+            setLocation(getX(), getY()-5);
         }
+    }else{
+        //hasTouchedPaddle = false;
+    }
     }
 }

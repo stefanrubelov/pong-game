@@ -8,6 +8,8 @@ public class StartWorld extends World {
         GreenfootImage background = getBackground(); 
         background.setColor(Color.BLACK);
         background.fill();// Create a blank black background
+        setPaintOrder(Title.class,Star.class);
+        addObject(new Title(), getWidth()/2, getHeight()/2);
     }
     public void act() {
          timer++;
