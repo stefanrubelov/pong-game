@@ -231,9 +231,10 @@ public class Balll extends SmoothMover
 
             // Increase the speed every 10 hits
             if (hitCounter >= HITS_FOR_SPEED_INCREASE) {
+                levelNumber++;
                 speed += SPEED_INCREMENT; // Increase the speed
                 hitCounter = 0; // Reset the counter after speed increase
-                levelNumber++;
+
             }
         }
     }
