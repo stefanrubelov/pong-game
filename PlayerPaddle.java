@@ -18,10 +18,7 @@ public class PlayerPaddle extends Paddle
      */
     public PlayerPaddle(int width, int height)
     {
-        this.width = width;
-        this.height = height;
-        dx = 1;
-        createImage();
+        setImage("paddle1b.png");
     }
 
     /**
@@ -55,15 +52,4 @@ public class PlayerPaddle extends Paddle
             move(-move_step);
         }
     }
-
-    /**
-     * Creates and sets an image for the paddle, the image will have the same dimensions as the paddles width and height.
-     */
-    private void createImage()
-    {
-        GreenfootImage image = new GreenfootImage(width, height);
-        image.setColor(Color.BLUE);
-        image.fill();
-        setImage(image);
     }
-}

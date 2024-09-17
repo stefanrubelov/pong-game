@@ -10,6 +10,9 @@ public class PongWorld extends World
             GreenfootImage background = getBackground(); 
             background.setColor(Color.BLACK);
             background.fill();
+            
+            paintStars(250);
+            
             setPaintOrder(Balll.class,Smoke.class);
             addObject (new Balll(), getWidth()/2, getHeight()/2);
             addObject(new PlayerPaddle(100,20),getWidth()/2, 550);
@@ -18,17 +21,13 @@ public class PongWorld extends World
             Greenfoot.setWorld(new StartWorld());
         }
     }
+    private void paintStars(int numberStars)
+    {
+        for(int i=0;i<numberStars;i++)
+        {
+        int x = Greenfoot.getRandomNumber(getWidth() + 5);
+        int y = Greenfoot.getRandomNumber(getHeight() + 5);
+        addObject (new BackgroundEffect(), x, y);
+    }
+    }
 }
-
-//*private void paintStars(int numberStars)
-//{
-//  for(int i=0;i<numberStars;i++)
-//{
-//  GreenfootImage background = getBackground();
-//int x = Greenfoot.getRandomNumber(getWidth());
-//int y = Greenfoot.getRandomNumber(getHeight());
-//int size = 3;
-
-//background.setColor(Color.YELLOW);
-//background.fillOval(x, y, size, size);
- 
