@@ -156,6 +156,7 @@ public class Balll extends SmoothMover
             if (! hasBouncedVertically)
             {
                 revertVertically();
+                Greenfoot.playSound("Pew.mp3");
             }
         }
         else
@@ -211,17 +212,24 @@ public class Balll extends SmoothMover
     }
     public void checkPaddleHit() {
         // Assuming Paddle is the parent class of both paddles
+        if(isTouching(Paddle.class)){
         Paddle paddle = (Paddle) getOneIntersectingObject(Paddle.class);
         
         if (paddle != null) {
             revertVertically(); // Bounce the ball
-            hitCounter++; // Increment the hit counter
+            Greenfoot.playSound("Buh.mp3");
+            hitCounter++;
 
             // Increase the speed every 10 hits
             if (hitCounter >= HITS_FOR_SPEED_INCREASE) {
                 speed += SPEED_INCREMENT; // Increase the speed
                 hitCounter = 0; // Reset the counter after speed increase
             }
+            
+            setLocation(getX(), getY()-5);
         }
+    }else{
+        //hasTouchedPaddle = false;
+    }
     }
 }

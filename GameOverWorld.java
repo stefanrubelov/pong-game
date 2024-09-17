@@ -13,8 +13,8 @@ public class GameOverWorld extends World {
         // Set the background to the game-over image
         getBackground().drawImage(gameOverImage, getWidth()/2 - gameOverImage.getWidth()/2, getHeight()/2 - gameOverImage.getHeight()/2);
 
-        // Play the game-over sound
-        Greenfoot.playSound("game-over-sound.m4a"); // Add your game-over sound file here
+        //Play the game-over sound
+        Greenfoot.playSound("Game Over.mp3"); // Add your game-over sound file here
     }
 
     public void act() {
