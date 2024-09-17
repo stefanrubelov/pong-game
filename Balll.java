@@ -6,10 +6,10 @@ public class Balll extends SmoothMover
     private static final int BOUNCE_DEVIANCE_MAX = 5;
     private static final int STARTING_ANGLE_WIDTH = 90;
     private static final int DELAY_TIME = 100;
-    private int speed;
+    private double speed;
     private int hitCounter = 0;
     private static final int HITS_FOR_SPEED_INCREASE = 10;
-    private static final double SPEED_INCREMENT = 1;
+    private static final double SPEED_INCREMENT = 0.7;
 
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
