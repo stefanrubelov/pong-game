@@ -17,10 +17,9 @@ public class PongWorld extends World
         } else {
             Greenfoot.setWorld(new StartWorld());
         }
-        
-        
     }
 }
+
 //*private void paintStars(int numberStars)
 //{
 //  for(int i=0;i<numberStars;i++)

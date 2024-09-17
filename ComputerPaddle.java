@@ -11,12 +11,29 @@ public class ComputerPaddle extends Paddle
         createImage();
     }
 
-    public void act() {
+    /**
+     * Act - do whatever the ComputerPaddle wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
         movePaddle();
         handleEdgeWrapping();
+        setLocation(getX() + dx, getY());
+        // Check if the ball is intersecting the computer paddle
+        if (checkIntersectionBalll()) {
+            Balll ball = (Balll) getOneIntersectingObject(Balll.class);
+            if (ball != null && ball.getY() > getY()) {
+                // If the ball is below the paddle, make it bounce down
+                ball.revertVertically();  // Invert vertical direction
+            }
     }
-
-    private void createImage() {
+    }
+    /**
+     * Creates and sets an image for the paddle, the image will have the same dimensions as the paddles width and height.
+     */
+    private void createImage()
+    {
         GreenfootImage image = new GreenfootImage(width, height);
         image.setColor(Color.RED);
         image.fill();
