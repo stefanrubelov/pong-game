@@ -11,38 +11,23 @@ dependency10.from=Paddle
 dependency10.to=Balll
 dependency10.type=UsesDependency
 dependency11.from=ComputerPaddle
-dependency11.to=Balll
+dependency11.to=Number
 dependency11.type=UsesDependency
-<<<<<<< HEAD
-dependency12.from=PlayerPaddle
-dependency12.to=Balll
+dependency12.from=Balll
+dependency12.to=Smoke
 dependency12.type=UsesDependency
 dependency13.from=Balll
-dependency13.to=Smoke
+dependency13.to=GameOverWorld
 dependency13.type=UsesDependency
 dependency14.from=Balll
-dependency14.to=GameOverWorld
+dependency14.to=PlayerPaddle
 dependency14.type=UsesDependency
 dependency15.from=Balll
-dependency15.to=Paddle
-dependency15.type=UsesDependency
-=======
-dependency12.from=ComputerPaddle
-dependency12.to=Number
-dependency12.type=UsesDependency
-dependency13.from=PlayerPaddle
-dependency13.to=Balll
-dependency13.type=UsesDependency
-dependency14.from=Balll
-dependency14.to=Smoke
-dependency14.type=UsesDependency
-dependency15.from=Balll
-dependency15.to=GameOverWorld
+dependency15.to=ComputerPaddle
 dependency15.type=UsesDependency
 dependency16.from=Balll
 dependency16.to=Paddle
 dependency16.type=UsesDependency
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 dependency2.from=PongWorld
 dependency2.to=Balll
 dependency2.type=UsesDependency
@@ -67,15 +52,6 @@ dependency8.type=UsesDependency
 dependency9.from=StartWorld
 dependency9.to=Star
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=685
-editor.fx.0.width=1293
-editor.fx.0.x=-6
-editor.fx.0.y=-6
-height=685
-package.numDependencies=15
-package.numTargets=11
-=======
 editor.fx.0.height=830
 editor.fx.0.width=1550
 editor.fx.0.x=-7
@@ -83,7 +59,6 @@ editor.fx.0.y=-7
 height=830
 package.numDependencies=16
 package.numTargets=12
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -94,17 +69,10 @@ publish.title=
 publish.url=
 readme.height=60
 readme.name=@README
-<<<<<<< HEAD
-readme.width=48
-readme.x=10
-readme.y=10
-simulation.speed=50
-=======
 readme.width=49
 readme.x=10
 readme.y=10
 simulation.speed=51
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target1.height=70
 target1.name=Balll
 target1.showInterface=false
@@ -113,29 +81,19 @@ target1.width=120
 target1.x=0
 target1.y=0
 target10.height=70
-<<<<<<< HEAD
-target10.name=Smoke
-=======
 target10.name=Number
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
-<<<<<<< HEAD
-target11.name=BackgroundEffect
-=======
 target11.name=Star
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
-<<<<<<< HEAD
-=======
 target12.height=70
 target12.name=PlayerPaddle
 target12.showInterface=false
@@ -143,7 +101,6 @@ target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target2.height=70
 target2.name=ComputerPaddle
 target2.showInterface=false
@@ -159,79 +116,49 @@ target3.width=120
 target3.x=0
 target3.y=0
 target4.height=70
-<<<<<<< HEAD
-target4.name=Star
-target4.showInterface=false
-target4.type=ClassTarget
-=======
 target4.name=SmoothMover
 target4.showInterface=false
 target4.type=AbstractTarget
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target4.width=120
 target4.x=0
 target4.y=0
 target5.height=70
-<<<<<<< HEAD
-target5.name=SmoothMover
-=======
 target5.name=GameOverWorld
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
-<<<<<<< HEAD
-target6.name=GameOverWorld
-=======
 target6.name=PongWorld
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
 target6.x=0
 target6.y=0
 target7.height=70
-<<<<<<< HEAD
-target7.name=PlayerPaddle
-=======
 target7.name=StartWorld
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
-<<<<<<< HEAD
-target8.name=PongWorld
-=======
 target8.name=Smoke
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
 target8.x=0
 target8.y=0
 target9.height=70
-<<<<<<< HEAD
-target9.name=StartWorld
-=======
 target9.name=BackgroundEffect
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-<<<<<<< HEAD
-width=1293
-=======
 width=1550
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
 world.lastInstantiated=StartWorld
 xPosition=0
 yPosition=0
