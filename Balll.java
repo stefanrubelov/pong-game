@@ -214,7 +214,7 @@ public class Balll extends SmoothMover
     
     private void displayLevel()
     {
-        scoreLabel = new Label("Level " + hitCounter, 40); 
+        scoreLabel = new Label("Level " + levelNumber, 40); 
         // Since we're now in addedToWorld(), it's safe to use getWorld()
         getWorld().addObject(scoreLabel, 314, 26);  // Add the label at the top-left corner (100, 50)
     }
