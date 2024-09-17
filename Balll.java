@@ -248,6 +248,7 @@ public class Balll extends SmoothMover
 
                 if (hitCounter >= HITS_FOR_SPEED_INCREASE) {
                     speed += SPEED_INCREMENT;
+                    levelNumber++;
                     hitCounter = 0;
                 }
 

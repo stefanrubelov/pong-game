@@ -1,23 +1,4 @@
-<<<<<<< HEAD
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
-/**
- * Write a description of class SmothMover here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class SmoothMover extends Actor
-{
-    /**
-     * Act - do whatever the SmothMover wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
-=======
-import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
+import greenfoot.*;
 
 /**
  * A variation of an actor that maintains a precise location (using doubles for the co-ordinates
@@ -92,6 +73,5 @@ public abstract class SmoothMover extends Actor
     public double getExactY() 
     {
         return exactY;
->>>>>>> d59cca56ad56fb4876b30220301c43a34a9c6e75
     }
 }
