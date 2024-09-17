@@ -17,7 +17,7 @@ public class Balll extends SmoothMover
     private int smokeDelayCounter = 0;
     //private int smokeDelayTime = 4;
     //private boolean touchingPaddle = false;
-    
+
     private Label scoreLabel;
     private int levelNumber = 1;
     private boolean hasTouchedPaddle = false;
@@ -93,14 +93,12 @@ public class Balll extends SmoothMover
             smokeDelayCounter = 0;
         }
     }
-    
+
     public void addedToWorld(World world)
     {
         // Call displayLevel here, now that the ball is in the world
         displayLevel();
     }
-    
-     
 
     /**
      * Returns true if the ball is touching one of the side walls.
@@ -212,31 +210,29 @@ public class Balll extends SmoothMover
         hasBouncedVertically = false;
         setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
     }
-    
+
     private void displayLevel()
     {
         scoreLabel = new Label("Level " + levelNumber, 40); 
         // Since we're now in addedToWorld(), it's safe to use getWorld()
         getWorld().addObject(scoreLabel, 314, 26);  // Add the label at the top-left corner (100, 50)
     }
-    
+
     private void updateLevel()
     {
-            World world = getWorld();
+        World world = getWorld();
         if (scoreLabel != null)
         {
             world.removeObject(scoreLabel);
         }
-        
+
         // Create a new scoreLabel with the updated hitCounter
         scoreLabel = new Label("Level " + levelNumber, 40);
-        
+
         // Add the new scoreLabel to the world
         world.addObject(scoreLabel, 314, 26); 
-    
-    
+
     }
-    
 
     public void checkPaddleHit() {
         if (isTouching(Paddle.class)) {
@@ -261,6 +257,7 @@ public class Balll extends SmoothMover
     }
 
     private void checkComputerPaddleHit() {
+
         if (isTouching(ComputerPaddle.class)) {
             ComputerPaddle paddle = (ComputerPaddle) getOneIntersectingObject(ComputerPaddle.class);
 
@@ -274,11 +271,10 @@ public class Balll extends SmoothMover
                     setLocation(getX(), getY() + 5);
                 }
             }
-            
+
             setLocation(getX(), getY()-5);
+        } else {
+            hasTouchedPaddle = false;
         }
-    }else{
-        //hasTouchedPaddle = false;
-    }
     }
 }
