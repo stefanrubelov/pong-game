@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=PongWorld
+comment1.params=gameStarted
+comment1.target=PongWorld(boolean)
+comment2.params=numberStars
+comment2.target=void\ paintStars(int)
+numComments=3

@@ -6,7 +6,7 @@ public class ComputerPaddle extends Paddle
     private int height = 20;
     private int dx = 1;
     private final int WORLD_TOP_START = 30;
-
+    
     public ComputerPaddle() {
         createImage();
     }
