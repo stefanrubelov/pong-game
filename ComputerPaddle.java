@@ -20,15 +20,8 @@ public class ComputerPaddle extends Paddle
         movePaddle();
         handleEdgeWrapping();
         setLocation(getX() + dx, getY());
-        // Check if the ball is intersecting the computer paddle
-        if (checkIntersectionBalll()) {
-            Balll ball = (Balll) getOneIntersectingObject(Balll.class);
-            if (ball != null && ball.getY() > getY()) {
-                // If the ball is below the paddle, make it bounce down
-                ball.revertVertically();  // Invert vertical direction
-            }
     }
-    }
+
     /**
      * Creates and sets an image for the paddle, the image will have the same dimensions as the paddles width and height.
      */
