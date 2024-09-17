@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayerPaddle extends Paddle
 {
-    private int width;
-    private int height;
+    private int width = 100;
+    private int height = 20;
     private int dx;
     private int move_step = 5;
 
@@ -18,7 +18,7 @@ public class PlayerPaddle extends Paddle
      */
     public PlayerPaddle(int width, int height)
     {
-        setImage("paddle1b.png");
+        createImage();
     }
 
     /**
@@ -28,28 +28,26 @@ public class PlayerPaddle extends Paddle
     public void act() 
     {
         changeDirection();
-        //setLocation(getX() + dx, getY());
-        // Check if the ball is intersecting the self-moving paddle
-        if (checkIntersectionBalll()) {
-            Balll ball = (Balll) getOneIntersectingObject(Balll.class);
-            if (ball != null && ball.getY() < getY()) {
-                // If the ball is above the paddle, make it bounce up
-                ball.revertVertically();  // Invert vertical direction
-            }
-        }
     }    
 
-   
     private void changeDirection()
     {
         checkIfAtHorizontalEdge();
 
         if(Greenfoot.isKeyDown("right")){
-                move(move_step);
+            move(move_step);
         }
-        
+
         if(Greenfoot.isKeyDown("left")){
             move(-move_step);
         }
     }
+
+    private void createImage()
+    {
+        GreenfootImage image = new GreenfootImage(width, height);
+        image.setColor(Color.WHITE);
+        image.fill();
+        setImage(image);
     }
+}
