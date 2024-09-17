@@ -9,6 +9,9 @@ public class Title extends Actor
     int yPosition = 300;
     
     public Title(){
+        GreenfootImage blankImage = new GreenfootImage(1, 1);
+        setImage(blankImage);
+        
         pongImage = new GreenfootImage("Pong", 50, Color.YELLOW, new Color(0, 0, 0, 70));
         battleImage = new GreenfootImage("Battle", 50, Color.YELLOW, new Color(0, 0, 0, 70));
     }

@@ -5,7 +5,7 @@ public class ComputerPaddle extends Paddle
     private int width = 100;
     private int height = 20;
     private int dx = 1;
-    private final int WORLD_TOP_START = 30;
+    private final int WORLD_TOP_START = 50;
     
     public ComputerPaddle() {
         createImage();
@@ -57,14 +57,16 @@ public class ComputerPaddle extends Paddle
     }
 
     private void randomStart() {
+        int reduceDistanceFromMiddle = 30;
+        
         World world = getWorld();
         if (world == null) return;
 
         if (Greenfoot.getRandomNumber(2) == 0) {
-            setLocation(0 - width / 2, Number.getRandom(WORLD_TOP_START, world.getHeight() / 2));
+            setLocation(0 - width / 2, Number.getRandom(WORLD_TOP_START, (world.getHeight() / 2) - reduceDistanceFromMiddle));
             dx = 1;
         } else {
-            setLocation(world.getWidth() + width / 2, Number.getRandom(WORLD_TOP_START, world.getHeight() / 2));
+            setLocation(world.getWidth() + width / 2, Number.getRandom(WORLD_TOP_START, (world.getHeight() / 2) - reduceDistanceFromMiddle));
             dx = -1;
         }
     }
