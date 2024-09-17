@@ -248,7 +248,7 @@ public class Balll extends SmoothMover
                     levelNumber++;
                     hitCounter = 0;
                 }
-
+                Greenfoot.playSound("Buh.mp3");
                 setLocation(getX(), getY() - 5);
             }
         } else if (hasTouchedPaddle) {
