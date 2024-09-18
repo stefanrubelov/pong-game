@@ -1,11 +1,6 @@
 import greenfoot.*;
-/**
- * Write a description of class Number here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Number  
+
+public class Number extends Helper
 {
     public static int getRandom(int from, int to){
         if (from > to) {

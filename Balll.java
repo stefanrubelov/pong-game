@@ -85,18 +85,15 @@ public class Balll extends SmoothMover
     {
         smokeDelayCounter++;
         if (smokeDelayCounter >= Greenfoot.getRandomNumber(8)) {
-            // Spawn smoke at the current location of the ball
             Smoke smoke = new Smoke();
             getWorld().addObject(smoke, getX(), getY());
 
-            // Reset the counter to keep the delay consistent
             smokeDelayCounter = 0;
         }
     }
 
     public void addedToWorld(World world)
     {
-        // Call displayLevel here, now that the ball is in the world
         displayLevel();
     }
 
@@ -136,9 +133,7 @@ public class Balll extends SmoothMover
             {
                 revertHorizontally();
             }
-        }
-        else
-        {
+        } else {
             hasBouncedHorizontally = false;
         }
     }
@@ -154,11 +149,9 @@ public class Balll extends SmoothMover
             if (! hasBouncedVertically)
             {
                 revertVertically();
-                Greenfoot.playSound("Pew.mp3");
+                GameSound.pew();
             }
-        }
-        else
-        {
+        } else {
             hasBouncedVertically = false;
         }
     }
@@ -214,8 +207,8 @@ public class Balll extends SmoothMover
     private void displayLevel()
     {
         scoreLabel = new Label("Level " + levelNumber, 40); 
-        // Since we're now in addedToWorld(), it's safe to use getWorld()
-        getWorld().addObject(scoreLabel, 314, 26);  // Add the label at the top-left corner (100, 50)
+        
+        getWorld().addObject(scoreLabel, 314, 26);  
     }
 
     private void updateLevel()
@@ -226,10 +219,8 @@ public class Balll extends SmoothMover
             world.removeObject(scoreLabel);
         }
 
-        // Create a new scoreLabel with the updated hitCounter
         scoreLabel = new Label("Level " + levelNumber, 40);
 
-        // Add the new scoreLabel to the world
         world.addObject(scoreLabel, 314, 26); 
 
     }
@@ -248,7 +239,7 @@ public class Balll extends SmoothMover
                     levelNumber++;
                     hitCounter = 0;
                 }
-                Greenfoot.playSound("Buh.mp3");
+                GameSound.buh();
                 setLocation(getX(), getY() - 5);
             }
         } else if (hasTouchedPaddle) {
@@ -256,25 +247,29 @@ public class Balll extends SmoothMover
         }
     }
 
-    private void checkComputerPaddleHit() {
-
+    private void checkComputerPaddleHit() 
+    {
         if (isTouching(ComputerPaddle.class)) {
             ComputerPaddle paddle = (ComputerPaddle) getOneIntersectingObject(ComputerPaddle.class);
 
             if (paddle != null) {
                 int ballY = getY();
+                int ballX = getX();
                 int paddleTopY = paddle.getY() - paddle.getImage().getHeight() / 2;
                 int paddleBottomY = paddle.getY() + paddle.getImage().getHeight() / 2;
+                int paddleLeftX = paddle.getX() - paddle.getImage().getWidth() / 2;
+                int paddleRightX = paddle.getX() + paddle.getImage().getWidth() / 2;
 
-                if (ballY >= paddleBottomY) {
+                if (ballY >= paddleBottomY && ballX >= paddleLeftX && ballX <= paddleRightX) {
                     revertVertically();
                     setLocation(getX(), getY() + 5);
+                } else if (ballY < paddleTopY && ballX >= paddleLeftX && ballX <= paddleRightX) {
+                    return;
                 }
             }
-
-            setLocation(getX(), getY()-5);
         } else {
             hasTouchedPaddle = false;
         }
     }
+
 }
