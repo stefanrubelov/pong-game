@@ -44,10 +44,14 @@ public class ComputerPaddle extends Paddle
         int currentX = getX();
 
         if(getX() == getWorld().getWidth()-1) { 
-            setLocation(1, Number.getRandom(WORLD_TOP_START, world.getHeight() / 2)); 
+            updatePaddleSize();
+            createImage();
+            setLocation(1, Number.getRandom(WORLD_TOP_START, (world.getHeight() - world.getHeight() / 4))); 
         }
         if(getX() == 0) { 
-            setLocation(world.getWidth()-1, Number.getRandom(WORLD_TOP_START, world.getHeight() / 2)); 
+            updatePaddleSize();
+            createImage();
+            setLocation(world.getWidth()-1, Number.getRandom(WORLD_TOP_START, (world.getHeight() - world.getHeight() / 4))); 
         }
 
     }
@@ -69,5 +73,12 @@ public class ComputerPaddle extends Paddle
             setLocation(world.getWidth() + width / 2, Number.getRandom(WORLD_TOP_START, (world.getHeight() / 2) - reduceDistanceFromMiddle));
             dx = -1;
         }
+    }
+    
+    private void updatePaddleSize(){
+        int randomWidth = Number.getRandom(50, 250);
+        int randomHeight = Number.getRandom(10, 40);
+        this.width = randomWidth;
+        this.height = randomHeight;
     }
 }
