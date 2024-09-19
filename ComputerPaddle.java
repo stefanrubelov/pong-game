@@ -77,7 +77,7 @@ public class ComputerPaddle extends Paddle
     
     private void updatePaddleSize(){
         int randomWidth = Number.getRandom(50, 250);
-        int randomHeight = Number.getRandom(10, 40);
+        int randomHeight = Number.getRandom(10, 25);
         this.width = randomWidth;
         this.height = randomHeight;
     }

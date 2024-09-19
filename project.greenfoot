@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.BackgroundEffect.image=button-yellow.png
-class.Balll.image=yellow-draught.png
+class.Ball.image=yellow-draught.png
 class.Paddle.image=bus-4.png
 class.Smoke.image=smoke\ red(1).png
 class.Star.image=yellow-draught.png
@@ -8,57 +8,43 @@ dependency1.from=GameOverWorld
 dependency1.to=PongWorld
 dependency1.type=UsesDependency
 dependency10.from=StartWorld
-<<<<<<< Updated upstream
 dependency10.to=PongWorld
-=======
-dependency10.to=Star
->>>>>>> Stashed changes
 dependency10.type=UsesDependency
 dependency11.from=StartWorld
 dependency11.to=Star
 dependency11.type=UsesDependency
-<<<<<<< Updated upstream
 dependency12.from=Paddle
-dependency12.to=Balll
-=======
-dependency12.from=ComputerPaddle
-dependency12.to=Number
->>>>>>> Stashed changes
+dependency12.to=Ball
 dependency12.type=UsesDependency
 dependency13.from=ComputerPaddle
 dependency13.to=Number
 dependency13.type=UsesDependency
-dependency14.from=Balll
+dependency14.from=Ball
 dependency14.to=Label
 dependency14.type=UsesDependency
-dependency15.from=Balll
+dependency15.from=Ball
 dependency15.to=Smoke
 dependency15.type=UsesDependency
-dependency16.from=Balll
+dependency16.from=Ball
 dependency16.to=GameOverWorld
 dependency16.type=UsesDependency
-dependency17.from=Balll
+dependency17.from=Ball
 dependency17.to=PlayerPaddle
 dependency17.type=UsesDependency
-dependency18.from=Balll
+dependency18.from=Ball
 dependency18.to=ComputerPaddle
 dependency18.type=UsesDependency
-<<<<<<< Updated upstream
-dependency19.from=Balll
+dependency19.from=Ball
 dependency19.to=GameSound
 dependency19.type=UsesDependency
 dependency2.from=GameOverWorld
 dependency2.to=GameSound
-=======
-dependency2.from=PongWorld
-dependency2.to=Balll
->>>>>>> Stashed changes
 dependency2.type=UsesDependency
-dependency20.from=Balll
+dependency20.from=Ball
 dependency20.to=Paddle
 dependency20.type=UsesDependency
 dependency3.from=PongWorld
-dependency3.to=Balll
+dependency3.to=Ball
 dependency3.type=UsesDependency
 dependency4.from=PongWorld
 dependency4.to=PlayerPaddle
@@ -72,35 +58,19 @@ dependency6.type=UsesDependency
 dependency7.from=PongWorld
 dependency7.to=BackgroundEffect
 dependency7.type=UsesDependency
-<<<<<<< Updated upstream
 dependency8.from=PongWorld
 dependency8.to=Smoke
 dependency8.type=UsesDependency
 dependency9.from=StartWorld
 dependency9.to=Title
 dependency9.type=UsesDependency
-editor.fx.0.height=830
-editor.fx.0.width=1550
-editor.fx.0.x=-7
-editor.fx.0.y=-7
-height=830
-package.numDependencies=20
-package.numTargets=16
-=======
-dependency8.from=StartWorld
-dependency8.to=Title
-dependency8.type=UsesDependency
-dependency9.from=StartWorld
-dependency9.to=PongWorld
-dependency9.type=UsesDependency
 editor.fx.0.height=735
 editor.fx.0.width=813
 editor.fx.0.x=431
 editor.fx.0.y=26
-height=685
-package.numDependencies=18
-package.numTargets=14
->>>>>>> Stashed changes
+height=830
+package.numDependencies=20
+package.numTargets=16
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -116,7 +86,7 @@ readme.x=10
 readme.y=10
 simulation.speed=53
 target1.height=70
-target1.name=Balll
+target1.name=Ball
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
@@ -137,11 +107,7 @@ target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
-<<<<<<< Updated upstream
 target12.name=GameSound
-=======
-target12.name=Number
->>>>>>> Stashed changes
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
@@ -161,7 +127,6 @@ target14.type=ClassTarget
 target14.width=120
 target14.x=0
 target14.y=0
-<<<<<<< Updated upstream
 target15.height=70
 target15.name=Star
 target15.showInterface=false
@@ -176,8 +141,6 @@ target16.type=ClassTarget
 target16.width=120
 target16.x=0
 target16.y=0
-=======
->>>>>>> Stashed changes
 target2.height=70
 target2.name=ComputerPaddle
 target2.showInterface=false

@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class Balll extends SmoothMover
+public class Ball extends SmoothMover
 {
     private static final int BALL_SIZE = 25;
     private static final int BOUNCE_DEVIANCE_MAX = 5;
@@ -25,7 +25,7 @@ public class Balll extends SmoothMover
     /**
      * Contructs the ball and sets it in motion!
      */
-    public Balll()
+    public Ball()
     {
         createImage();
         init();
@@ -197,7 +197,7 @@ public class Balll extends SmoothMover
      */
     private void init()
     {
-        speed = 2;
+        speed = 3;
         delay = DELAY_TIME;
         hasBouncedHorizontally = false;
         hasBouncedVertically = false;
@@ -207,7 +207,7 @@ public class Balll extends SmoothMover
     private void displayLevel()
     {
         scoreLabel = new Label("Level " + levelNumber, 40); 
-        
+
         getWorld().addObject(scoreLabel, 314, 26);  
     }
 
@@ -258,7 +258,7 @@ public class Balll extends SmoothMover
                 int paddleTopY = paddle.getY() - paddle.getImage().getHeight() / 2;
                 int paddleBottomY = paddle.getY() + paddle.getImage().getHeight() / 2;
                 int paddleLeftX = paddle.getX() - paddle.getImage().getWidth() / 2;
-                int paddleRightX = paddle.getX() + paddle.getImage().getWidth() / 2;
+                int paddleRightX = paddle.getX() + paddle.getImage().getWidth() / 2;    
 
                 if (ballY >= paddleBottomY && ballX >= paddleLeftX && ballX <= paddleRightX) {
                     revertVertically();

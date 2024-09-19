@@ -9,7 +9,7 @@ import greenfoot.*;
 public abstract class Paddle extends Actor
 {
     public boolean checkIntersectionBalll() {
-        Balll ball = (Balll) getOneIntersectingObject(Balll.class);
+        Ball ball = (Ball) getOneIntersectingObject(Ball.class);
         return ball != null;
     }
 

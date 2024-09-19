@@ -13,8 +13,8 @@ public class PongWorld extends World
             
             paintStars(250);
             
-            setPaintOrder(Balll.class,Smoke.class);
-            addObject (new Balll(), getWidth()/2, getHeight()/2);
+            setPaintOrder(Ball.class,Smoke.class);
+            addObject (new Ball(), getWidth()/2, getHeight()/2);
             addObject(new PlayerPaddle(100,20),getWidth()/2, 550);
             addObject(new ComputerPaddle(), 0, 0);
         } else {
