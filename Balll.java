@@ -33,6 +33,8 @@ public class Balll extends SmoothMover
         createImage();
         init();
     }
+    
+    //
 
     /* private void addSmokeDelay(){
     smokeDelayCounter++;
