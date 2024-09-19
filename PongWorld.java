@@ -6,17 +6,19 @@ public class PongWorld extends World
     {
         super(400, 600, 1);
         
+        
         if (gameStarted) {
-            GreenfootImage background = getBackground(); 
-            background.setColor(Color.BLACK);
-            background.fill();
             
-            paintStars(250);
-            
-            setPaintOrder(Balll.class,Smoke.class);
-            addObject (new Balll(), getWidth()/2, getHeight()/2);
-            addObject(new PlayerPaddle(100,20),getWidth()/2, 550);
-            addObject(new ComputerPaddle(), 0, 0);
+                GreenfootImage background = getBackground(); 
+                background.setColor(Color.BLACK);
+                background.fill();
+                
+                paintStars(250);
+                
+                setPaintOrder(Balll.class,Smoke.class);
+                addObject (new Balll(), getWidth()/2, getHeight()/2);
+                addObject(new PlayerPaddle(100,20),getWidth()/2, 550);
+                addObject(new ComputerPaddle(), 0, 0);
         } else {
             Greenfoot.setWorld(new StartWorld());
         }

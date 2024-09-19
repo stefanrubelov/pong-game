@@ -15,7 +15,8 @@ public class StartWorld extends World {
          timer++;
         
         if(timer ==300){
-            Greenfoot.setWorld(new PongWorld(true));
+            
+            Greenfoot.setWorld(new PongWorld(true)); //there will be the intro screen with: "press enter to play", then it will switch to PongWorld
         }
         // Add a new star at the center periodically
         if (Greenfoot.getRandomNumber(2) < 1) {  // Control star creation speed

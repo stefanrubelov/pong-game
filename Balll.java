@@ -19,8 +19,11 @@ public class Balll extends SmoothMover
     //private boolean touchingPaddle = false;
 
     private Label scoreLabel;
+    private Label enterToStart;
     private int levelNumber = 1;
     private boolean hasTouchedPaddle = false;
+    
+    private boolean canStart = false;
 
     /**
      * Contructs the ball and sets it in motion!
@@ -64,16 +67,26 @@ public class Balll extends SmoothMover
         {
             delay--;
         }
+         
         else
         {
-            move();
-            makeSmoke();
-            checkPaddleHit();
-            checkComputerPaddleHit();
-            checkBounceOffWalls();
-            checkBounceOffCeiling();
-            checkRestart();
-            updateLevel();
+            String key = Greenfoot.getKey();
+            if(key != null && key.equals("enter"))
+            {
+                canStart = true;
+            }
+            
+            if(canStart == true)
+            {   
+                move();
+                makeSmoke();
+                checkPaddleHit();
+                checkComputerPaddleHit();
+                checkBounceOffWalls();
+                checkBounceOffCeiling();
+                checkRestart();
+                updateLevel();
+            }
         }
     }    
 
@@ -207,8 +220,20 @@ public class Balll extends SmoothMover
     private void displayLevel()
     {
         scoreLabel = new Label("Level " + levelNumber, 40); 
+        getWorld().addObject(scoreLabel, 314, 26);
         
-        getWorld().addObject(scoreLabel, 314, 26);  
+        World world = getWorld();
+        
+        if(canStart == false)
+        {
+            enterToStart = new Label("Press <enter> to start", 30); 
+            getWorld().addObject(enterToStart, 200, 250);
+ 
+        }
+        
+        
+        
+        
     }
 
     private void updateLevel()
@@ -218,7 +243,13 @@ public class Balll extends SmoothMover
         {
             world.removeObject(scoreLabel);
         }
-
+        
+        if(canStart == true)
+        {
+            world.removeObject(enterToStart);
+ 
+        }
+ 
         scoreLabel = new Label("Level " + levelNumber, 40);
 
         world.addObject(scoreLabel, 314, 26); 
