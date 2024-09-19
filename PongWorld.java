@@ -25,8 +25,8 @@ public class PongWorld extends World
     {
         for(int i=0;i<numberStars;i++)
         {
-        int x = Greenfoot.getRandomNumber(getWidth() + 5);
-        int y = Greenfoot.getRandomNumber(getHeight() + 5);
+        int x = Greenfoot.getRandomNumber(getWidth());
+        int y = Greenfoot.getRandomNumber(getHeight());
         addObject (new BackgroundEffect(), x, y);
     }
     }

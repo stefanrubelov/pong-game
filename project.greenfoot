@@ -8,13 +8,22 @@ dependency1.from=GameOverWorld
 dependency1.to=PongWorld
 dependency1.type=UsesDependency
 dependency10.from=StartWorld
+<<<<<<< Updated upstream
 dependency10.to=PongWorld
+=======
+dependency10.to=Star
+>>>>>>> Stashed changes
 dependency10.type=UsesDependency
 dependency11.from=StartWorld
 dependency11.to=Star
 dependency11.type=UsesDependency
+<<<<<<< Updated upstream
 dependency12.from=Paddle
 dependency12.to=Balll
+=======
+dependency12.from=ComputerPaddle
+dependency12.to=Number
+>>>>>>> Stashed changes
 dependency12.type=UsesDependency
 dependency13.from=ComputerPaddle
 dependency13.to=Number
@@ -34,11 +43,16 @@ dependency17.type=UsesDependency
 dependency18.from=Balll
 dependency18.to=ComputerPaddle
 dependency18.type=UsesDependency
+<<<<<<< Updated upstream
 dependency19.from=Balll
 dependency19.to=GameSound
 dependency19.type=UsesDependency
 dependency2.from=GameOverWorld
 dependency2.to=GameSound
+=======
+dependency2.from=PongWorld
+dependency2.to=Balll
+>>>>>>> Stashed changes
 dependency2.type=UsesDependency
 dependency20.from=Balll
 dependency20.to=Paddle
@@ -58,6 +72,7 @@ dependency6.type=UsesDependency
 dependency7.from=PongWorld
 dependency7.to=BackgroundEffect
 dependency7.type=UsesDependency
+<<<<<<< Updated upstream
 dependency8.from=PongWorld
 dependency8.to=Smoke
 dependency8.type=UsesDependency
@@ -71,6 +86,21 @@ editor.fx.0.y=-7
 height=830
 package.numDependencies=20
 package.numTargets=16
+=======
+dependency8.from=StartWorld
+dependency8.to=Title
+dependency8.type=UsesDependency
+dependency9.from=StartWorld
+dependency9.to=PongWorld
+dependency9.type=UsesDependency
+editor.fx.0.height=735
+editor.fx.0.width=813
+editor.fx.0.x=431
+editor.fx.0.y=26
+height=685
+package.numDependencies=18
+package.numTargets=14
+>>>>>>> Stashed changes
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -84,7 +114,7 @@ readme.name=@README
 readme.width=49
 readme.x=10
 readme.y=10
-simulation.speed=58
+simulation.speed=53
 target1.height=70
 target1.name=Balll
 target1.showInterface=false
@@ -107,7 +137,11 @@ target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
+<<<<<<< Updated upstream
 target12.name=GameSound
+=======
+target12.name=Number
+>>>>>>> Stashed changes
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
@@ -127,6 +161,7 @@ target14.type=ClassTarget
 target14.width=120
 target14.x=0
 target14.y=0
+<<<<<<< Updated upstream
 target15.height=70
 target15.name=Star
 target15.showInterface=false
@@ -141,6 +176,8 @@ target16.type=ClassTarget
 target16.width=120
 target16.x=0
 target16.y=0
+=======
+>>>>>>> Stashed changes
 target2.height=70
 target2.name=ComputerPaddle
 target2.showInterface=false
