@@ -7,7 +7,7 @@ public class PongWorld extends World
     private int modifierSpawnCounter;
     private int spawnInterval;
     private boolean spawned = false;
-    
+
     public PongWorld(boolean gameStarted, String paddleColor) 
     {
         super(400, 600, 1);
@@ -19,18 +19,16 @@ public class PongWorld extends World
             background.fill();
 
             paintStars(250);
-            
+
             setPaintOrder(Ball.class, Smoke.class);
             addObject(new Ball(), getWidth() / 2, getHeight() / 2);
-            addObject(new PlayerPaddle(100, 20), getWidth() / 2, 550);
-            addObject(new ComputerPaddle(), 0, 0);
+            addObject(new PlayerPaddle(Color.WHITE, 100, 20), getWidth() / 2, 550);
+            addObject(new ComputerPaddle(1), 0, 0);
 
             spawnInterval = Number.getRandom(1000, 2000);
             initializeStartingPaddle();
-        
-            
-            showText("PongCoins: " + PongCoinManager.getPongCoins(), 80, 20);
 
+            showText("PongCoins: " + PongCoinManager.getPongCoins(), 80, 20);
         } else {
             Greenfoot.setWorld(new StartWorld());
         }
@@ -53,36 +51,35 @@ public class PongWorld extends World
         }
         addObject(new PlayerPaddle(paddleColor, 100, 20), getWidth() / 2, getHeight() - 50);
     }
-    public void act(){
-        showText("PongCoins: " + PongCoinManager.getPongCoins(), 80, 20);
-    }
+
     private void paintStars(int numberStars)
     {
         for(int i=0;i<numberStars;i++)
         {
-        int x = Greenfoot.getRandomNumber(getWidth());
-        int y = Greenfoot.getRandomNumber(getHeight());
-        addObject (new BackgroundEffect(), x, y);
+            int x = Greenfoot.getRandomNumber(getWidth());
+            int y = Greenfoot.getRandomNumber(getHeight());
+            addObject (new BackgroundEffect(), x, y);
 
-    }
-
-    public void act() {
-
-        modifierSpawnCounter++;
-        if (modifierSpawnCounter >= spawnInterval) {
-            if(!spawned){
-                spawnModifier();
-                spawned = true;
-            }
-            modifierSpawnCounter = 0;
-            spawnInterval = Greenfoot.getRandomNumber(101) + 100;
         }
 
     }
+    public void act() {
+            showText("PongCoins: " + PongCoinManager.getPongCoins(), 80, 20);
+            modifierSpawnCounter++;
+            if (modifierSpawnCounter >= spawnInterval) {
+                if(!spawned){
+                    spawnModifier();
+                    spawned = true;
+                }
+                modifierSpawnCounter = 0;
+                spawnInterval = Greenfoot.getRandomNumber(101) + 100;
+            }
 
-    private void spawnModifier() {
-        Modifier lifeWall = new LifeWall();
-        int x = Greenfoot.getRandomNumber(getWidth());
-        addObject(lifeWall, x, 0);
-    }
+        }
+
+        private void spawnModifier() {
+            Modifier lifeWall = new LifeWall();
+            int x = Greenfoot.getRandomNumber(getWidth());
+            addObject(lifeWall, x, 0);
+        }
 }
