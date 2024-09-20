@@ -14,20 +14,20 @@ public class Smoke extends Actor
             fade=2;
         }
     }
-    
+
     public void act()
     {
         shrink();
     }
+
     private void shrink(){
         if( getImage().getWidth()<10){
             getWorld().removeObject(this);
-        }
-        else{
-        GreenfootImage img = new GreenfootImage ( image);
-        img.scale(getImage().getWidth()-fade, getImage().getHeight()-fade);
-        img.setTransparency (getImage().getTransparency() - (fade*5));
-        setImage(img);
+        } else {
+            GreenfootImage img = new GreenfootImage ( image);
+            img.scale(getImage().getWidth()-fade, getImage().getHeight()-fade);
+            img.setTransparency (getImage().getTransparency() - (fade*5));
+            setImage(img);
         }
     }
 }

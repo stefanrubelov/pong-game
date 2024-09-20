@@ -30,6 +30,7 @@ public class PlayerPaddle extends Paddle
     public void act() 
     {
         changeDirection();
+        checkForModifier();
     }    
 
     private void changeDirection()
@@ -51,5 +52,15 @@ public class PlayerPaddle extends Paddle
         image.setColor(paddleColor);
         image.fill();
         setImage(image);
+    }
+
+    private void checkForModifier() {
+        if (isTouching(Modifier.class)) {
+            Modifier modifier = (Modifier) getOneIntersectingObject(Modifier.class);
+
+            if (modifier != null) {
+                modifier.apply();
+            }
+        }
     }
 }
