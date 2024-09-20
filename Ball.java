@@ -150,6 +150,7 @@ public class Ball extends SmoothMover
             {
                 revertVertically();
                 GameSound.pew();
+                PongCoinManager.addCoin();
             }
         } else {
             hasBouncedVertically = false;

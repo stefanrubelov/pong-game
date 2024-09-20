@@ -8,17 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayerPaddle extends Paddle
 {
-    private int width = 100;
-    private int height = 20;
-    private int dx;
+    private int width;
+    private int height;
     private int move_step = 5;
-
+    private Color paddleColor;
     /**
      * Constructs a new paddle with the given dimensions.
      */
-    public PlayerPaddle(int width, int height)
+    public PlayerPaddle(Color color, int width, int height)
     {
-        createImage();
+        this.paddleColor = color; // Set the paddle's color
+        this.width = width; // Set the paddle's width
+        this.height = height;
+        updateImage();
     }
 
     /**
@@ -44,10 +46,10 @@ public class PlayerPaddle extends Paddle
         }
     }
 
-    private void createImage()
+    private void updateImage()
     {
         GreenfootImage image = new GreenfootImage(width, height);
-        image.setColor(Color.WHITE);
+        image.setColor(paddleColor);
         image.fill();
         setImage(image);
     }

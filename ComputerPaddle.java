@@ -5,9 +5,15 @@ public class ComputerPaddle extends Paddle
     private int width = 100;
     private int height = 20;
     private int dx = 1;
+    private static final double SPEED_PADDLE = 0.7;
+    private double speed = 2;
+    private double level = 1;
     private final int WORLD_TOP_START = 50;
     
-    public ComputerPaddle() {
+    public ComputerPaddle(double level) {
+        super();
+        this.level = level;
+        this.speed = level + SPEED_PADDLE;
         createImage();
     }
 
@@ -17,27 +23,40 @@ public class ComputerPaddle extends Paddle
      */
     public void act()
     {
-        movePaddle();
-        handleEdgeWrapping();
-        setLocation(getX() + dx, getY());
+        checkBallPosition();
+        //handleEdgeWrapping();
     }
 
+    public void checkBallPosition(){
+        Ball ball = (Ball)getWorld().getObjects(Ball.class).get(0);
+        
+        if(ball != null && ball.getY() <500){
+            int ballX = ball.getX();
+            int currentX = getX();
+            
+            //int randomOffset = Greenfoot.getRandomNumber(20) - 10;
+            if (Math.abs(ballX - currentX) > speed) {
+                if (ballX > currentX) {
+                    setLocation(currentX + (int)speed , getY()); // Move paddle right
+                } else {
+                    setLocation(currentX - (int)speed , getY()); // Move paddle left
+                }
+            }  
+        }
+    }
     /**
      * Creates and sets an image for the paddle, the image will have the same dimensions as the paddles width and height.
      */
     private void createImage()
     {
-        GreenfootImage image = new GreenfootImage(width, height);
+       GreenfootImage image = new GreenfootImage(width, height);
         image.setColor(Color.RED);
         image.fill();
         setImage(image);
     }
-
-    private void movePaddle() {
-        setLocation(getX() + dx, getY());
-    }
-
-    private void handleEdgeWrapping() {
+    /*
+     * 
+     private void handleEdgeWrapping() {
         World world = getWorld();
         int worldWidth = world.getWidth();
         int worldHeight = world.getHeight();
@@ -54,7 +73,7 @@ public class ComputerPaddle extends Paddle
             setLocation(world.getWidth()-1, Number.getRandom(WORLD_TOP_START, (world.getHeight() - world.getHeight() / 4))); 
         }
 
-    }
+    }*/
 
     protected void addedToWorld(World world) {
         randomStart();
@@ -75,10 +94,12 @@ public class ComputerPaddle extends Paddle
         }
     }
     
+    /*
+     * 
     private void updatePaddleSize(){
         int randomWidth = Number.getRandom(50, 250);
         int randomHeight = Number.getRandom(10, 25);
         this.width = randomWidth;
         this.height = randomHeight;
-    }
+    } */
 }
